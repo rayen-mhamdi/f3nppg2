@@ -1,8 +1,76 @@
-<div class="card flex justify-content-center">
-    <p-card header="Title">
-        <p class="m-0">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-            quas!
-        </p>
-    </p-card>
+<div class="grid">
+    <ng-container *ngFor="let row of widgets_rows1">
+        <div [ngClass]="['md:col-'+row.width, 'col-12']">
+            <div class="grid">
+                <ng-container *ngFor="let widget of row.cols">
+                    <div [ngClass]="['md:col-'+widget.width , 'md:col-offset-'+widget.offset, 'col-12']" [style]="{'min-height':widget.height+'vh', 'max-height':widget.height+'vh', 'background':widget.background}">
+                        
+
+                        <!-- Visualization Component-->
+                            <!-- Start Header of visualization Component-->
+                            <div style="height: 30px;">
+                                {{ widget.id }} - {{ widget.title }}
+                            </div>
+                            <!-- End Header of visualization Component-->
+
+                            <!-- Start Body of visualization Component-->
+                            <div style="height: calc(100% - 60px); overflow: auto;">
+                                {{widget.content}}
+                            </div>
+                            <!-- End Body of visualization Component-->
+
+                            <!-- Start Footer of visualization Component-->
+                            <div style="height: 30px;">
+                                Footer of widget {{ widget.id }}
+                            </div>
+                            <!-- End Footer of visualization Component-->
+
+                        <!-- End Visualization Component-->
+
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+
+
+<hr>
+<br><br><br><br>
+
+<div class="grid">
+    <ng-container *ngFor="let row of widgets_rows2">
+        <div [ngClass]="['md:col-'+row.width, 'col-12']">
+            <div class="grid">
+                <ng-container *ngFor="let widget of row.cols">
+                    <div [ngClass]="['md:col-'+widget.width , 'md:col-offset-'+widget.offset, 'col-12']" [style]="{'min-height':widget.height+'vh', 'max-height':widget.height+'vh', 'background':widget.background}">
+                        
+
+                        <!-- Visualization Component-->
+                            <!-- Start Header of visualization Component-->
+                            <div style="height: 30px;">
+                                {{ widget.id }} - {{ widget.title }}
+                            </div>
+                            <!-- End Header of visualization Component-->
+
+                            <!-- Start Body of visualization Component-->
+                            <div style="height: calc(100% - 60px); overflow: auto;">
+                                {{widget.content}}
+                            </div>
+                            <!-- End Body of visualization Component-->
+
+                            <!-- Start Footer of visualization Component-->
+                            <div style="height: 30px;">
+                                Footer of widget {{ widget.id }}
+                            </div>
+                            <!-- End Footer of visualization Component-->
+
+                        <!-- End Visualization Component-->
+
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </ng-container>
 </div>
